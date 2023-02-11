@@ -1,6 +1,6 @@
-namespace ParkLookupApi.Models
+namespace ParksLookupApi.Models
 {
-  public class ParksLookupApi
+  public class Park
   {
     public int ParkId { get; set; }
     public string Name { get; set; }
