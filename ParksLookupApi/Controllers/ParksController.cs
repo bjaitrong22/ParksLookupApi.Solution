@@ -21,7 +21,7 @@ namespace ParksLookupApi.Controllers
       return await _db.Parks.ToListAsync();
     }
 
-    //Get: api/animals/4
+    //Get: api/Parks/4
     [HttpGet("{id}")]
     public async Task<ActionResult<Park>> GetPark(int id)
     {
@@ -35,6 +35,16 @@ namespace ParksLookupApi.Controllers
       {
         return park;
       }
+    }
+
+    //POST api/Parks
+    [HttpPost]
+    public async Task<ActionResult<Park>> Post(Park park)
+    {
+      _db.Parks.Add(park);
+      await _db.SaveChangesAsync();
+
+      return CreatedAtAction(nameof(GetPark), new { id = park.ParkId }, park);
     }
   }
 }
