@@ -1,6 +1,6 @@
 using System;
 
-namespace ParksLookupApig.ResourceModels
+namespace ParksLookupApi.ResourceModels
 {
     public class AuthenticationResponse
     {
