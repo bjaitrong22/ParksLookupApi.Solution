@@ -2,7 +2,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace ParksLookupApi.ResourceModels
 {
-  public class userManager
+  public class User
   {
     [Required]
     public string UserName { get; set; }
