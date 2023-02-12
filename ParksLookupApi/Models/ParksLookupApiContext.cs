@@ -1,8 +1,10 @@
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 
 namespace ParksLookupApi.Models
 {
-  public class ParksLookupApiContext: DbContext
+  public class ParksLookupApiContext: IdentityUserContext<IdentityUser>
   {
     public DbSet<Park> Parks { get; set; }
     public ParksLookupApiContext(DbContextOptions<ParksLookupApiContext> options) : base(options)
@@ -11,6 +13,8 @@ namespace ParksLookupApi.Models
 
     protected override void OnModelCreating(ModelBuilder builder)
     {
+      base.OnModelCreating(builder);
+      
       builder.Entity<Park>()
         .HasData(
           new Park { ParkId = 1, Category = "National Park", Name = "Rocky Mountain National Park", Address = "1000 Highway 36, Estes Park, CO 80517", Activities= " Camping, Hiking, Snowshoeing, Fishing, WildLife Observation. Visitor Information Line: 970-586-1206"},
