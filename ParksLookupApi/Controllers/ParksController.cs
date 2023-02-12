@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Authorization;
 using ParksLookupApi.Models;
 
 namespace ParksLookupApi.Controllers
@@ -38,6 +39,7 @@ namespace ParksLookupApi.Controllers
     }
 
     //POST api/Parks
+    [Authorize]
     [HttpPost]
     public async Task<ActionResult<Park>> Post(Park park)
     {
@@ -47,6 +49,8 @@ namespace ParksLookupApi.Controllers
       return CreatedAtAction(nameof(GetPark), new { id = park.ParkId }, park);
     }
 
+    //PUT:api/Parks/4
+    [Authorize]
     [HttpPut("{id}")]
     public async Task<IActionResult> Put (int id, Park park)
     {
@@ -84,6 +88,7 @@ namespace ParksLookupApi.Controllers
     }
 
     //DELET: api/Parks/4
+    [Authorize]
     [HttpDelete("{id}")]
     public async Task<IActionResult> DeletePark(int id)
     {
