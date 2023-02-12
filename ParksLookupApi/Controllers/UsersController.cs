@@ -16,14 +16,14 @@ namespace ParksLookupApi.Controllers
         _userManager = userManager;
       }
 
-      //Post:api/Users
-      [HttpPost]
-      public async Task<ActionResult<User>> PostUser(User user)
-      {
-         if (!ModelState.IsValid)
-         {
+      // POST: api/Users
+    [HttpPost]
+    public async Task<ActionResult<User>> PostUser(User user)
+    {
+        if (!ModelState.IsValid)
+        {
             return BadRequest(ModelState);
-         }
+        }
 
         var result = await _userManager.CreateAsync(
             new IdentityUser() { UserName = user.UserName, Email = user.Email },
@@ -32,11 +32,29 @@ namespace ParksLookupApi.Controllers
 
         if (!result.Succeeded)
         {
-          return BadRequest(result.Errors);
+            return BadRequest(result.Errors);
         }
 
         user.Password = null;
         return Created("", user);
-      }    
+    }
+
+      // GET: api/Users/username
+    [HttpGet("{username}")]
+    public async Task<ActionResult<User>> GetUser(string username)
+    {
+        IdentityUser user = await _userManager.FindByNameAsync(username);
+
+        if (user == null)
+        {
+            return NotFound();
+        }
+
+        return new User
+        {
+            UserName = user.UserName,
+            Email = user.Email
+        };
+    }   
   }
 }
