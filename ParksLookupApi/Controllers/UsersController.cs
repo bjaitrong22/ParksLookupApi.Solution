@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using ParksLookupApi.ResourceModels;
 
 namespace ParksLookupApi.Controllers
 {
@@ -14,5 +15,28 @@ namespace ParksLookupApi.Controllers
       {
         _userManager = userManager;
       }
+
+      //Post:api/Users
+      [HttpPost]
+      public async Task<ActionResult<User>> PostUser(User user)
+      {
+         if (!ModelState.IsValid)
+         {
+            return BadRequest(ModelState);
+         }
+
+        var result = await _userManager.CreateAsync(
+            new IdentityUser() { UserName = user.UserName, Email = user.Email },
+            user.Password
+        );
+
+        if (!result.Succeeded)
+        {
+          return BadRequest(result.Errors);
+        }
+
+        user.Password = null;
+        return Created("", user);
+      }    
   }
 }
