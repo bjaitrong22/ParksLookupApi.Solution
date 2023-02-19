@@ -241,6 +241,7 @@ The token will be shown in the response body below the text body where you enter
 {
     "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJKV1QgZm9yIFBhcmtzTG9va3VwQXBpLmVuZHBvaW50ZGV2LmNvbSIsImp0aSI6IjY2MmEzMjlkLTYyYjktNDE0Zi04MzA3LTA4MjVhZGQ5N2RmZiIsImlhdCI6IjIvMTkvMjAyMyA0OjIxOjQ4IEFNIiwiaHR0cDovL3NjaGVtYXMueG1sc29hcC5vcmcvd3MvMjAwNS8wNS9pZGVudGl0eS9jbGFpbXMvbmFtZWlkZW50aWZpZXIiOiJkZmZiMjk2Ny1lZTI4LTRiYmItOTA2MS01NzhmNWNhMWQ0NWUiLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiSm9obkpvaG4iLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9lbWFpbGFkZHJlc3MiOiJqb2huQGdtYWlsLmNvbSIsImV4cCI6MTY3Njc4MDU2OCwiaXNzIjoiUGFya3NMb29rdXBBcGkuZW5kcG9pbnRkZXYuY29tIiwiYXVkIjoiUGFya3NMb29rdXBBcGkuZW5kcG9pbnRkZXYuY29tIn0.AVsPhGj5MQhF9A3jAhJ8C8iu5OtqvNnqJWuK83GNPFU",
     "expiration": "2023-02-19T04:22:48.003205Z"
+}
 
 3. Using the Token in Postman
 
@@ -322,8 +323,8 @@ HTTP Request
 • POST /api/Users/BearerToken
 
 Path Parameters
-
 None
+
 ..........................................................................................
 
 ## ***NOTE: Database migrations using EF Core migrations
