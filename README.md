@@ -6,7 +6,7 @@ ParksLookupApi.Solution
 
 ParksLookupApi.Solution is an API for looking up state and national parks. It currently provides the following information:
 
-* state or national park
+* Category: state or national park
 * park name 
 * location
 * activities.
@@ -187,22 +187,22 @@ Under the Users option, look for the Post/api/Users endpoint and click on the do
 
 Replace each instance of the word string with the appropriate information ( userName, password, and email address). Once completed, click on the blue execute button to create and save your user account.
 
-{
-  "userName": "string",
-  "password": "string",
-  "email": "string"
-}
+        {
+          "userName": "string",
+          "password": "string",
+          "email": "string"
+        }
 
 • USING POSTMAN:
 
 Open Postman and create a POST request using the URL: http://localhost:5000/api/users.
 Add the following information to the request as raw Json ( drop down menu on left side) in the Body tab:
 
-{
-  "userName": "string",
-  "password": "string",
-  "email": "string"
-}
+        {
+          "userName": "string",
+          "password": "string",
+          "email": "string"
+        }
 
 Replace each instance of the word string with the appropriate information ( userName, password, and email address). Once completed, click on the blue send button (upper rightside of your screen) to create and save your user account. 
 
@@ -212,14 +212,14 @@ Replace each instance of the word string with the appropriate information ( user
 
 Under the Users option, look for the Post/api/Users/BearerToken endpoint and click on the down arrow on the far rightside of the screen to open up the drop down menu. Then click on the Try it out button, and a text box under the Request Body will be presented to you with the Json syntax below:
 
-{
-  "userName": "string",
-  "password": "string"
-}
+          {
+            "userName": "string",
+            "password": "string"
+          }
 
 Replace each instance of the word string with the appropriate information (userName and password you created). Once completed, click on the blue execute button and the token will be shown in the response body, below the Request Body. Below is an example:
 
-{
+{ 
   "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJKV1QgZm9yIFBhcmtzTG9va3VwQXBpLmVuZHBvaW50ZGV2LmNvbSIsImp0aSI6ImNjOWZmYzUyLTVmNDUtNDM1ZS1hMTI1LTgwNTA3Y2IwYjM5ZiIsImlhdCI6IjIvMTkvMjAyMyA0OjEzOjU0IEFNIiwiaHR0cDovL3NjaGVtYXMueG1sc29hcC5vcmcvd3MvMjAwNS8wNS9pZGVudGl0eS9jbGFpbXMvbmFtZWlkZW50aWZpZXIiOiJkZmZiMjk2Ny1lZTI4LTRiYmItOTA2MS01NzhmNWNhMWQ0NWUiLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiSm9obkpvaG4iLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9lbWFpbGFkZHJlc3MiOiJqb2huQGdtYWlsLmNvbSIsImV4cCI6MTY3Njc4MDA5NCwiaXNzIjoiUGFya3NMb29rdXBBcGkuZW5kcG9pbnRkZXYuY29tIiwiYXVkIjoiUGFya3NMb29rdXBBcGkuZW5kcG9pbnRkZXYuY29tIn0.TOvdbb_O04JEVVoSV4UKbi6bzjBYHMhjLHOYKpqX7BM",
   "expiration": "2023-02-19T04:14:54.726525Z"
 }
@@ -229,10 +229,10 @@ Replace each instance of the word string with the appropriate information (userN
 Open Postman and create a POST request using the URL: http://localhost:5000/api/Users/BearerToken
 Add the following query to the request as raw Json ( drop down menu on left side) in the Body tab:
 
-{
-  "userName": "string",
-  "password": "string",
-}
+          {
+            "userName": "string",
+            "password": "string",
+          }
 
 Replace each instance of the word string with the appropriate information (userName and password you created). Once completed, click on the blue send button (upper rightside of your screen).
 
@@ -254,11 +254,11 @@ Base URL: http://localhost:5000
 
 HTTP Request Structure for Parks
 
-GET /api/{component}
-POST /api/{component}
-GET /api/{component}/{id}
-PUT /api/{component}/{id}
-DELETE /api/{component}/{id}
+• GET /api/{component}
+• POST /api/{component}
+• GET /api/{component}/{id}
+• PUT /api/{component}/{id}
+• DELETE /api/{component}/{id}
 
 Example Query
 
@@ -266,20 +266,19 @@ http://localhost:5000/api/Parks/2
 
 Sample JSON Response
 
-{
-    "parkId": 2,
-    "category": "National Park",
-    "name": "Mesa Verde National Park",
-    "address": " Mesa Verde, CO",
-    "activities": " Camping, Hiking, Cliff Dwelling Tours, Bird Watching, Geologic Views. Visitor information Line: 970-529-4465"
-}
+          {
+              "parkId": 2,
+              "category": "National Park",
+              "name": "Mesa Verde National Park",
+              "address": " Mesa Verde, CO",
+              "activities": " Camping, Hiking, Cliff Dwelling Tours, Bird Watching, Geologic Views. Visitor information Line: 970-529-4465"
+          }
 
 HTTP Request Structure for Users
 
-POST /api/{component}
-GET /api/{component}/{username}
-POST /api/{component}/{component}
-
+• POST /api/{component}
+• GET /api/{component}/{username}
+• POST /api/{component}/{component}
 
 Example Query
 
@@ -287,11 +286,11 @@ http://localhost:5000/api/Users/JohnJohn
 
 Sample JSON Response
 
-{
-    "userName": "JohnJohn",
-    "password": null,
-    "email": "john@gmail.com"
-}
+        {
+            "userName": "JohnJohn",
+            "password": null,
+            "email": "john@gmail.com"
+        }
 
 ..........................................................................................
 
@@ -301,11 +300,11 @@ Access information on State and National Parks around the country.
 
 HTTP Request
 
-GET /api/Parks
-POST /api/Parks
-GET /api/Parks/{id}
-PUT /api/Parks/{id}
-DELETE /api/Parks/{id}
+• GET /api/Parks
+• POST /api/Parks
+• GET /api/Parks/{id}
+• PUT /api/Parks/{id}
+• DELETE /api/Parks/{id}
 
 Path Parameters
 
@@ -318,9 +317,9 @@ Access information about popular coffee beverages.
 
 HTTP Request
 
-POST /api/Users
-GET /api/Users/{username}
-POST /api/Users/BearerToken
+• POST /api/Users
+• GET /api/Users/{username}
+• POST /api/Users/BearerToken
 
 Path Parameters
 
